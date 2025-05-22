@@ -3,8 +3,11 @@ Francisco Lencina, Alexis Gomez y Nicolas Bruno
 **Diccionario de datos:**
 
 Registro: IDAnimal + nombre + corral
+
 Animal: nombre + tipo_Animal [ gato | perro | ave | tortuga | cuis ]
+
 Adopción : IDadoptante + fecha_Adopcion + estado_Adopcion 
+
 Devolución: periodo + fecha_Devolucion
 
 | Nombre      | Descripción                            | Longitud | Tipo       | Dominio  |
