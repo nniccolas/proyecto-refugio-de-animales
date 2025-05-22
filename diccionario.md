@@ -15,7 +15,6 @@ Devolución: periodo + fecha_Devolucion
 | tipo_Animal | tipo de animal                         | 10       | String     | discreto |
 | IDadoptante | identificador del adoptante            | 10       | int        | continuo |
 | fecha_Adop  | fecha de adopción                      | -        | date-time  | continuo |
-| estado_Adop | estado de la adopción (adoptado        | -        |    bool    | discreto |
-|             |  + disponible)                         |          |            |          |
+| estado_Adop | estado de la adopción (adoptado + disponible) | - |    bool    | discreto |
 | periodo     | días de devolución disponibles         | 14       | int        | discreto |
 | fecha_Devol | fecha de la devolución                 | -        | date-time  | continuo |
