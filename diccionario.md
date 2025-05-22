@@ -4,19 +4,18 @@ Francisco Lencina, Alexis Gomez y Nicolas Bruno
 
 Registro: IDAnimal + nombre + corral
 Animal: nombre + tipo_Animal [ gato | perro | ave | tortuga | cuis ]
-Adopci髇 : IDadoptante + fecha_Adopcion + estado_Adopcion 
-Devoluci髇: periodo + fecha_Devolucion
+Adopci贸n : IDadoptante + fecha_Adopcion + estado_Adopcion 
+Devoluci贸n: periodo + fecha_Devolucion
 
-| Nombre      | Descripci髇                            | Longitud | Tipo       | Dominio  |
+| Nombre      | Descripci贸n                            | Longitud | Tipo       | Dominio  |
 |-------------|----------------------------------------|----------|------------|----------|
 | IDAnimal    | identificador del animal               | 10       | int        | continuo |
 | nombre      | nombre del animal                      | 10       | String     | discreto |
 | corral      | corral asignado a los animales         | 3        | String     | discreto |
 | tipo_Animal | tipo de animal                         | 10       | String     | discreto |
 | IDadoptante | identificador del adoptante            | 10       | int        | continuo |
-| fecha_Adop  | fecha de adopci髇                      | -        | date-time  | continuo |
-| estado_Adop | estado de la adopci髇 (adoptado        | -        |    bool    | discreto |
+| fecha_Adop  | fecha de adopci贸n                      | -        | date-time  | continuo |
+| estado_Adop | estado de la adopci贸n (adoptado        | -        |    bool    | discreto |
 |             |  + disponible)                         |          |            |          |
-| periodo     | d韆s de devoluci髇 disponibles         | 14       | int        | discreto |
-| fecha_Devol | fecha de la devoluci髇                 | -        | date-time  | continuo |
-|-----------------------------------------------------------------------------------------|
+| periodo     | d铆as de devoluci贸n disponibles         | 14       | int        | discreto |
+| fecha_Devol | fecha de la devoluci贸n                 | -        | date-time  | continuo |
