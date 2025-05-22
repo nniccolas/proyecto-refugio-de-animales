@@ -1,4 +1,4 @@
--------------------------------*"PROYECTO PRACTICA PROFESIONALIZANTE "REFUGIO DE ANIMALES"*-------------------------------
+-----------------------------------*"PROYECTO PRACTICA PROFESIONALIZANTE "REFUGIO DE ANIMALES"*-----------------------------------
 Desarrollo de una aplicación de gestión para refugios de animales.
 En cada entrada de animal se lo registra con un número de identificación y un nombre los interesados en adoptar se los evaluará y tomará datos personales para revisar si están en óptimas condiciones de adopción. A cada animal se le asignará a un corral para identificar el tipo de animal que desean adoptar.
 Cada corral tiene una identificación única y no se puede repetir ejemplo (corral A1, corral B2). Los números de identificación de las mascotas y sus nombres serán así ejemplo (manchas 1 = corral A1, limón 2 = corral B2).
