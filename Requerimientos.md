@@ -1,4 +1,4 @@
-**[Francisco Lencina , Alexis Gomez y Nicolas Bruno]{.mark}**
+#Francisco Lencina , Alexis Gomez y Nicolas Bruno#
 
 **Requerimientos:**
 
@@ -15,8 +15,7 @@ Requerimientos Funcionales:
 
 Requerimientos No Funcionales:
 
--   La información del sistema y su respectivo registro deben estar bien
-    > asegurados.
+-   La información del sistema y su respectivo registro deben estar bien asegurados.
 
 -   Debe ser apto para soportar una gran cantidad de animales y corrales
 
@@ -24,13 +23,10 @@ Requerimientos No Funcionales:
 
 Requerimientos de dominio:
 
--   El refugio debe cumplir con la ley de [Protección de Animales contra
-    > Actos de Crueldad]{.mark} Nº [14.346.]{.mark}
+-   El refugio debe cumplir con la ley de Protección de Animales contra Actos de Crueldad Nº (14.346.)
 
--   Debe cumplir con las estrictas normas de higiene impuestas por las
-    > autoridades competentes.
+-   Debe cumplir con las estrictas normas de higiene impuestas por las autoridades competentes.
 
--   Debe estar económicamente apta para pagar medicamentos,
-    > veterinarios, alimentos y el mantenimiento de los animales.
+-   Debe estar económicamente apta para pagar medicamentos, veterinarios, alimentos y el mantenimiento de los animales.
 
 -   Debe tener adoptantes evaluados y considerados aptos.
