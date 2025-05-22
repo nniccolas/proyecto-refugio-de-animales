@@ -8,8 +8,7 @@ Requerimientos Funcionales:
 
 -   El sistema debe permitir agregar nuevos animales con nuevos números.
 
--   El sistema debe eliminar el registro del animal adoptado una vez
-    > completada. la adopción.
+-   El sistema debe eliminar el registro del animal adoptado una vez completada la adopción.
 
 -   Debe registrar cada devolución en caso de arrepentimiento.
 
