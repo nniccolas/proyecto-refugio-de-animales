@@ -1,4 +1,4 @@
-**Francisco Lencina  y Nicolas Bruno**
+**Francisco Lencina, Alexis Gomez  y Nicolas Bruno**
 
 **Regla de negocio:**
 1. Hechos: Cada animal tiene un número de identificación único, un nombre y un corral asignado.
