@@ -1,18 +1,18 @@
-#Francisco Lencina  y Nicolas Bruno#
+**Francisco Lencina  y Nicolas Bruno**
 **Regla de negocio:**
-1. Hechos: Cada animal tiene un n鷐ero de identificaci髇 鷑ico, un nombre y un corral asignado.
-Cada corral tiene una identificaci髇 鷑ica (Ej: A1, B2).
-Las personas interesadas en adoptar deben pasar una evaluaci髇 previa.
+1. Hechos: Cada animal tiene un n煤mero de identificaci贸n 煤nico, un nombre y un corral asignado.
+Cada corral tiene una identificaci贸n 煤nica (Ej: A1, B2).
+Las personas interesadas en adoptar deben pasar una evaluaci贸n previa.
 Cuando un animal es adoptado, su registro es eliminado del sistema.
 Si el adoptante se arrepiente dentro del tiempo permitido, el animal puede ser devuelto al refugio.
-2. Restricciones: No puede haber dos animales ni corrales con el mismo n鷐ero de identificaci髇.
-Un animal solo puede estar asignado a un 鷑ico corral a la vez tampoco conserva su anterior n鷐ero de identificaci髇 ni su corral original.
-No se permite la adopci髇 si el interesado no aprueba la evaluaci髇.
-3. Acci髇 disparadora: Al registrar una solicitud de adopci髇 se eval鷄 al interesado.
-Despu閟 de registrar un nuevo animal o al devolver uno autom醫icamente se le asigna corral.
+2. Restricciones: No puede haber dos animales ni corrales con el mismo n煤mero de identificaci贸n.
+Un animal solo puede estar asignado a un 煤nico corral a la vez tampoco conserva su anterior n煤mero de identificaci贸n ni su corral original.
+No se permite la adopci贸n si el interesado no aprueba la evaluaci贸n.
+3. Acci贸n disparadora: Al registrar una solicitud de adopci贸n se eval煤a al interesado.
+Despu茅s de registrar un nuevo animal o al devolver uno autom谩ticamente se le asigna corral.
 Si el adoptante se arrepiente dentro del plazo establecido se devuelve la mascota.
-4. C醠culos: La disponibilidad del corral se calcula en base a la ocupaci髇 actual; un corral ocupado no puede ser asignado a otro animal.
-La cantidad de animales por corral se puede contabilizar para an醠isis o alertas (por ejemplo, sobrepoblaci髇).
-El promedio de adopciones exitosas por mes se puede calcular para reportes y estad韘ticas.
-5. Inferencias: Si no hay corrales disponibles, entonces el sistema debe rechazar autom醫icamente nuevas admisiones de animales.
- Si un animal es adoptado y luego devuelto, su anterior corral puede ser reutilizado, pero no necesariamente para 閘 mismo.
+4. C谩lculos: La disponibilidad del corral se calcula en base a la ocupaci贸n actual; un corral ocupado no puede ser asignado a otro animal.
+La cantidad de animales por corral se puede contabilizar para an谩lisis o alertas (por ejemplo, sobrepoblaci贸n).
+El promedio de adopciones exitosas por mes se puede calcular para reportes y estad铆sticas.
+5. Inferencias: Si no hay corrales disponibles, entonces el sistema debe rechazar autom谩ticamente nuevas admisiones de animales.
+ Si un animal es adoptado y luego devuelto, su anterior corral puede ser reutilizado, pero no necesariamente para 茅l mismo.
