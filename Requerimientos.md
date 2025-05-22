@@ -1,4 +1,4 @@
-#Francisco Lencina , Alexis Gomez y Nicolas Bruno#
+**Francisco Lencina , Alexis Gomez y Nicolas Bruno**
 
 **Requerimientos:**
 
