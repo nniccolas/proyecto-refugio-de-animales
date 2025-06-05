@@ -25,7 +25,5 @@ Requerimientos de dominio:
 -   El refugio debe cumplir con la ley de Protección de Animales contra Actos de Crueldad Nº (14.346.)
 
 -   Debe cumplir con las estrictas normas de higiene impuestas por las autoridades competentes.
-
--   Debe estar económicamente apta para pagar medicamentos, veterinarios, alimentos y el mantenimiento de los animales.
-
+ 
 -   Debe tener adoptantes evaluados y considerados aptos.
