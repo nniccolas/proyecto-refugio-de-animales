@@ -24,7 +24,7 @@ Devolución: periodo + fecha_Devolucion
 |                       | Nombre_Animal    | Nombre del animal                              | 10       | string    | Discreto |
 |                       | Tipo_Animal      | Tipo de animal adoptable                       | 10       | string    | Discreto |
 | **Adoptante**         | Datos_Personales | Datos personales del adoptante                 | -        | -         | -        |
-|                       | Condición        | Condicion del potencial adoptante para adoptar | 10       | string    | Discreto |
+|                       | Condición        | Condicion del potencial adoptante para adoptar | 10       | bool      | -        |
 | **Datos_Personales**  | Nombre_Adpotante | Nombre del adoptante                           | 30       | string    | Discreto |
 |                       | Apellido         | Apellido del adoptante                         | 30       | string    | Discreto |
 |                       | DNI              | Documento Nacional de Identidad del adoptante  | 10       | int       | Continuo |
