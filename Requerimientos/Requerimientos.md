@@ -4,11 +4,11 @@
 
 Requerimientos Funcionales:
 
--   El sistema debe registrar los números de cada animal.
+-   El sistema debe registrar los Id de cada animal.
 
--   El sistema debe permitir agregar nuevos animales con nuevos números.
+-   El sistema debe permitir agregar nuevos animales con nuevos Ids.
 
--   El sistema debe eliminar el registro del animal adoptado una vez completada la adopción.
+-   El sistema debe eliminar la asignación de ID y Corral del animal adoptado una vez completada la adopción.
 
 -   Debe registrar cada devolución en caso de arrepentimiento.
 
@@ -16,7 +16,7 @@ Requerimientos No Funcionales:
 
 -   La información del sistema y su respectivo registro deben estar bien asegurados con un login y encriptamiento de datos.
 
--   Debe ser apto para soportar 160 animales
+-   Debe ser apto para soportar 160 animales max.
 
 -   Los números de corrales no se pueden repetir.
 
