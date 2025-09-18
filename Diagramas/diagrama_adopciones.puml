@@ -34,4 +34,4 @@ ADOPCION ||--|| ANIMAL : incluye
 
 @enduml
 
-![Diagrama de adopciones](images/plantuml.png)
+![Diagrama de adopciones](plantuml.png)
