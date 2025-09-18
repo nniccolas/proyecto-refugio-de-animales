@@ -1,0 +1,37 @@
+@startuml
+' Diagrama ER de adopciones
+
+entity ADOPTANTE {
+  *id_adoptante
+  Nombre
+  Direccion
+  Telefono
+  Aptitud_Adop
+}
+
+entity REFUGIO {
+  *id_refugio
+  Nombre
+  Direccion
+}
+
+entity ANIMAL {
+  *id_animal
+  Tipo
+  Nombre
+  Id_Corral
+}
+
+entity ADOPCION {
+  *id_adopcion
+  Estado
+  Devolucion
+  Plazo
+}
+
+' Relaciones
+ADOPTANTE ||--o{ ADOPCION : solicita
+REFUGIO ||--o{ ANIMAL : registra
+ADOPCION ||--|| ANIMAL : incluye
+
+@enduml
