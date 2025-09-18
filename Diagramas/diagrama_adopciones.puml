@@ -2,7 +2,6 @@
 ' Diagrama ER de adopciones
 
 entity ADOPTANTE {
-  *id_adoptante
   Nombre
   Direccion
   Telefono
@@ -10,28 +9,27 @@ entity ADOPTANTE {
 }
 
 entity REFUGIO {
-  *id_refugio
   Nombre
   Direccion
 }
 
 entity ANIMAL {
-  *id_animal
+  *id
   Tipo
   Nombre
-  Id_Corral
+  Corral {
+    IdCorral
 }
 
 entity ADOPCION {
-  *id_adopcion
   Estado
-  Devolucion
-  Plazo
+  Devolucion {
+    Plazo
 }
 
 ' Relaciones
-ADOPTANTE ||--o{ ADOPCION : solicita
-REFUGIO ||--o{ ANIMAL : registra
+ADOPTANTE ||--|| ADOPCION : solicita
+REFUGIO ||--|| ANIMAL : registra
 ADOPCION ||--|| ANIMAL : incluye
 
 @enduml
