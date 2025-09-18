@@ -35,3 +35,5 @@ REFUGIO ||--o{ ANIMAL : registra
 ADOPCION ||--|| ANIMAL : incluye
 
 @enduml
+
+![Diagrama de adopciones](plantuml.png)
