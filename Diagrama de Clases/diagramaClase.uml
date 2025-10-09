@@ -1,4 +1,9 @@
 @startuml
+
+skinparam nodesep 100
+skinparam ranksep 60
+skinparam classPadding 8
+
 class Adoptante {
 Aptitud_Adop : String
 Direcciòn : String
@@ -41,9 +46,9 @@ RealizarReporte ()
 RegistrarDevoluciòn ()
 }
 
-Adoptante "1" -down- "0..*" Adopción : Solicita
+Adoptante "1" --down- "0..*" Adopción : Solicita
 Adopción "1" -right- "0..1" Animal : Incluye
-Animal "1" -down- "0..*" Corral : Situado
+Animal "1" --down- "0..*" Corral : Situado
 Refugio "1" -left- "1..*" Animal : Registra
 Adopción "0..1" -left- "1" Devolución : Contiene
 
