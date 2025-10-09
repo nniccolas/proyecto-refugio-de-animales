@@ -1,0 +1,50 @@
+@startuml
+class Adoptante {
+Aptitud_Adop : String
+Direcciòn : String
+Nombre : String
+Telèfono : int
+Solicita ()
+}
+
+class Adopción {
+Estado : String
+RegistrarAdopciòn ()
+RegistrarDevoluciòn ()
+ActualizarEstado ()
+}
+
+class Animal {
+Tipo : String
+Nombre : String
+Raza : String
+AsignarCorral ()
+}
+
+class Corral {
+Id_Corral : int
+AgregarAnimal ()
+QuitarAnimal ()
+}
+
+class Refugio {
+Nombre : String
+Direcciòn : String
+RegistrarAnimales ()
+ListarAnimales ()
+}
+
+class Devolución {
+Plazo : Date
+getPlazo ()
+RealizarReporte ()
+RegistrarDevoluciòn ()
+}
+
+Adoptante "1" -down- "0..*" Adopción : Solicita
+Adopción "1" -right- "0..1" Animal : Incluye
+Animal "1" -down- "0..*" Corral : Situado
+Refugio "1" -left- "1..*" Animal : Registra
+Adopción "0..1" -left- "1" Devolución : Contiene
+
+@enduml
