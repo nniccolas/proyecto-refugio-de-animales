@@ -2,40 +2,49 @@
 left to right direction
 
 entity Refugio {
-  Localizacion
+  Localizacion <<PK>>
   Nombre
-  Contacto
+  Telefono
+  Email
   Responsable
   Horario
 }
 
-entity Empleado {
-  Nombre
-  Apellido
-  Rol
+entity Adoptante {
+  DNI <<PK>>
+  Nombre_Completo
   Telefono
+  Direccion
+  Email
+  Aptitud_Adop
 }
 
-entity Veterinario {
-  Id_Vet
-  Nombre
-  Matricula
+entity Empleado {
+  DNI <<PK>>
+  Nombre_Completo
   Telefono
+  Direccion
+  Email
+  Rol
+  Puesto
+  Sueldo
+  Expediente_Academico
+  Aptitud_Adop
 }
 
 entity Animal {
-  Alias
-  Tipo
+  Alias <<PK>>
+  Especie
   Nombre
-  Raza
   Sexo
 }
 
 entity Corral {
-  Id_Corral
+  Id_Corral <<PK>>
 }
 
 entity Adopcion {
+  Num_Adopcion <<PK>>
   Estado
   Fecha
 }
@@ -43,13 +52,6 @@ entity Adopcion {
 entity Devolución {
   Plazo
   Motivo
-}
-
-entity Adoptante {
-  Nombre
-  Telefono
-  Direccion
-  Aptitud_Adop
 }
 
 relationship Registra {
@@ -70,24 +72,17 @@ relationship Contiene {
 relationship Contrata {
 }
 
-relationship Atiende {
+relationship Puede_Solicitar {
 }
 
-relationship Cuenta_Con {
+relationship Evalua {
 }
-
 
 Refugio -- Registra
 Registra -- Animal
 
 Refugio -- Contrata
 Contrata -- Empleado
-
-Refugio -- Cuenta_Con
-Cuenta_Con -- Veterinario
-
-Veterinario -- Atiende
-Atiende -- Animal
 
 Animal -- Situado
 Situado -- Corral
@@ -100,5 +95,11 @@ Contiene -- Devolución
 
 Adoptante -- Solicita
 Solicita -- Adopcion
+
+Empleado -- Puede_Solicitar
+Puede_Solicitar -- Adopcion
+
+Refugio -- Evalua
+Evalua -- Adopcion
 
 @endchen
