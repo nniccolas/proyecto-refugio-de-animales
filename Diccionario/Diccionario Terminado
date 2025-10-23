@@ -4,15 +4,15 @@
 
 Corral = Animal + IDCorral
 
-Animal = IDAnimal + nombre +  tipo_Animal [ gato | perro | ave | tortuga | cuis ]
+Animal = Alias + Nombre_Animal + Especie [ gato | perro | ave | tortuga | cuis ] + Sexo [ Hembra | Macho ]
 
-Adoptante = Datos_Personales + Condicion
+Adoptante = Datos_Personales + Aptitud
 
-Datos_Personales = Nombre + Apellido + @Dni + Fecha_Nac + 1{Telefono}3 + 1{Direccion}3
+Datos_Personales = Nombre + Apellido + @Dni + Email + 1{Telefono}3 + 1{Direccion}3
 
 Condicion = (Aprobado | Pendiente | Rechazado)
 
-Adopción : Datos_Personales + fecha_Adopcion + estado_Adopcion
+Adopción: Adoptante + Animal + fecha_Adopcion + estado_Adopcion
 
 Devolución: periodo + fecha_Devolucion
 
@@ -20,12 +20,13 @@ Devolución: periodo + fecha_Devolucion
 | Entidad               | Nombre (Atributo)| Descripción                                    | Longitud | Tipo      | Dominio  |
 | --------------------- | ---------------- | ---------------------------------------------- | -------- | --------- | -- ----- |
 | **Corral**            | IDCorral         | Número o código del corral                     | 3        | string    | Discreto |
-| **Animal**            | IDAnimal         | Identificador único del animal                 | 10       | int       | Continuo |
+| **Animal**            | Alias            | Identificador único del animal                 | 10       | string    | Continuo |
 |                       | Nombre_Animal    | Nombre del animal                              | 10       | string    | Discreto |
-|                       | Tipo_Animal      | Tipo de animal adoptable                       | 10       | string    | Discreto |
+|                       | Especie          | Especie de animal adoptable                    | 10       | string    | Discreto |
+|                       | Sexo             | Sexo del animal adoptable                      | 6        | string    | Discreto |
 | **Adoptante**         | Datos_Personales | Datos personales del adoptante                 | -        | -         | -        |
-|                       | Condición        | Condicion del potencial adoptante para adoptar | 10       | bool      | -        |
-| **Datos_Personales**  | Nombre_Adpotante | Nombre del adoptante                           | 30       | string    | Discreto |
+|                       | Aptitud          | Aptitud del potencial adoptante para adoptar   | 10       | bool      | -        |
+| **Datos_Personales**  | Nombre_Adoptante | Nombre del adoptante                           | 30       | string    | Discreto |
 |                       | Apellido         | Apellido del adoptante                         | 30       | string    | Discreto |
 |                       | DNI              | Documento Nacional de Identidad del adoptante  | 10       | int       | Continuo |
 |                       | Fecha_Nac        | Fecha de nacimiento del adoptante              | -        | date time | Continuo |
@@ -35,3 +36,4 @@ Devolución: periodo + fecha_Devolucion
 |                       | Estado_Adopcion  | Estado de la adopción                          | -        | bool      | Discreto |
 | **Devolución**        | Periodo          | Tiempo transcurrido hasta la devolución (días) | 5        | int       | Continuo |
 |                       | Fecha_Devolucion | Fecha en que se realizó la devolución          | -        | date time | Continuo |
+
