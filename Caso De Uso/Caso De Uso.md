@@ -15,7 +15,7 @@
 1. Una vez aprobada su evaluación el sistema muestra los datos de los animales disponibles (nombre, id, corral).
 1. El adoptante selecciona el animal disponible.
 1. Se confirma la adopción.
-1. El sistema elimina el registro del animal adoptado.
+1. El sistema elimina de la lista de adoptables al animal.
 1. Se genera un período de arrepentimiento.
 
 **Camino alternativo:** 
@@ -42,4 +42,4 @@ Se arrepiente antes/luego de la confirmación y adopción.
 
 **Post condiciones:**
 
-El animal queda marcado como adoptado y eliminado del sistema y el adoptante queda registrado en la base de datos.
+El animal queda marcado como adoptado, se lo elimina de la lista de adoptables de manera temporalmente indefinida (en caso de devolucion) y la adopcion junto con el adoptante quedan registrados en la base de datos.
