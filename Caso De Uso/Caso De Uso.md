@@ -28,7 +28,7 @@
 
    2a. El sistema advierte al empleado
 
-1. El adoptante ya ha adoptado recientemente o no aprobó la evaluación y no puede adoptar por el momento.
+1. El adoptante ya ha adoptado recientemente y no puede adoptar por el momento.
 
    2a. Se bloquea el proceso de adopción y se registra el intento fallido
 
