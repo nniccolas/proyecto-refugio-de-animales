@@ -10,7 +10,7 @@ Adoptante = Datos_Personales + Aptitud
 
 Datos_Personales = Nombre + Apellido + @Dni + Email + 1{Telefono}3 + 1{Direccion}3
 
-Condicion = (Aprobado | Pendiente | Rechazado)
+Aptitud = (Aprobado | Pendiente | Rechazado)
 
 Adopción: Adoptante + Animal + fecha_Adopcion + estado_Adopcion
 
@@ -36,4 +36,5 @@ Devolución: periodo + fecha_Devolucion
 |                       | Estado_Adopcion  | Estado de la adopción                          | -        | bool      | Discreto |
 | **Devolución**        | Periodo          | Tiempo transcurrido hasta la devolución (días) | 5        | int       | Continuo |
 |                       | Fecha_Devolucion | Fecha en que se realizó la devolución          | -        | date time | Continuo |
+
 
