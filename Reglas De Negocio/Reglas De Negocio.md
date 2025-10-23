@@ -15,5 +15,5 @@ Cuando un animal es adoptado, su registro es eliminado del sistema.
 4. Cálculos: La disponibilidad del corral se calcula en base a la ocupación actual; un corral ocupado no puede ser asignado a otro animal.
 La cantidad de animales por corral se puede contabilizar para análisis o alertas (por ejemplo, sobrepoblación).
 Los dias de arrepentimiento restantes se calculan restando la fecha limite con la fecha actual
-6. Inferencias: Si un animal entra, se le debe generar automaticamente un Id UNICO
-Si una persona no aprueba la evaluacion, no puede adoptar
+6. Inferencias: Si un animal entra, se le debe generar automaticamente un Alias UNICO
+Si una persona no aprueba la evaluacion o ya adopto recientemente, no puede adoptar
