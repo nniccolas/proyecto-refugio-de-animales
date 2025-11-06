@@ -6,30 +6,26 @@ entity Refugio {
   Nombre
   Telefono
   Email
-  Responsable
   Horario
 }
 
-entity Adoptante {
-  DNI <<PK>>
+entity Persona {
+  DNI
   Nombre_Completo
   Telefono
   Direccion
   Email
+}
+
+entity Adoptante {
   Aptitud_Adop
 }
 
 entity Empleado {
-  DNI <<PK>>
-  Nombre_Completo
-  Telefono
-  Direccion
-  Email
   Rol
   Puesto
   Sueldo
   Expediente_Academico
-  Aptitud_Adop
 }
 
 entity Animal {
@@ -72,11 +68,8 @@ relationship Contiene {
 relationship Contrata {
 }
 
-relationship Puede_Solicitar {
-}
-
-relationship Evalua {
-}
+Persona -- Empleado
+Persona -- Adoptante
 
 Refugio -- Registra
 Registra -- Animal
@@ -95,11 +88,5 @@ Contiene -- Devolución
 
 Adoptante -- Solicita
 Solicita -- Adopcion
-
-Empleado -- Puede_Solicitar
-Puede_Solicitar -- Adopcion
-
-Refugio -- Evalua
-Evalua -- Adopcion
 
 @endchen
