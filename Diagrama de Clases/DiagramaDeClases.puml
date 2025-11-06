@@ -1,0 +1,81 @@
+@startuml
+
+title Diagrama de Clases - Sistema "Mi Huella"
+
+class Persona {
+  - DNI : int
+   Nombre_Completo : string
+   Direccion : string
+   Telefono : int
+   Email : string
+}
+
+class Adoptante {
+    Aptitud_Adop : string
+  
+  + SolicitarAdopcion(Alias, Aptitud_Adop)
+  + EjecutarArrepentimiento(Num_Adopcion, Motivo, Plazo)
+  + ConsultarEstadoAdopcion(Num_Adopcion)
+}
+
+class Empleado {
+    Puesto : string
+    Sueldo : int
+    Rol : string
+    Expediente_Academico : string
+}
+
+class Refugio {
+    Nombre : string
+  - Localizacion : string
+    Telefono : int
+    Email : string
+    Horario : string
+  
+  + RegistrarAnimal(Alias, Especie, Nombre, Sexo)
+  + RegistrarEmpleado(DNI, Nombre_Completo, Puesto, Rol, Expediente_Academico, Direccion, Telefono, Email)
+  + RegistrarAdopcion(DNI, Nombre_Completo, Num_Adopcion, Fecha, Estado, Plazo)
+  + AbrirPlazoDevolucion(Num_Adopcion)
+  + RegistrarDevolucion(Num_Adopcion, Plazo, Motivo)
+  + AsignarCorrral(Alias, Especie, Nombre, Sexo, Id_Corral)
+  + ActualizarEstado(Num_Adopcion, Estado)
+}
+
+class Animal {
+  - Alias : string
+    Especie : string
+    Nombre : string
+    Sexo : string
+}
+
+class Corral {
+  - Id_Corral : int
+}
+
+class Adopcion {
+  - Num_Adopcion : int
+    Fecha : Date
+    Estado : string
+}
+
+class Devolucion {
+    Plazo: String
+    Motivo : string
+  
+  + RegistrarDevolucion()
+}
+
+Persona <|-- Adoptante
+Persona <|-- Empleado
+
+Refugio "1" *-- "1..*" Animal : Refugia
+Refugio "1" -- "1..*" Empleado : Contrata
+
+Adoptante "1" -- "0..*" Adopcion : solicita
+
+Adopcion "1" -- "1" Animal : incluye
+Adopcion "1" *-- "1" Devolucion : contiene
+
+Corral "1" -- "0..*" Animal : aloja
+
+@enduml
