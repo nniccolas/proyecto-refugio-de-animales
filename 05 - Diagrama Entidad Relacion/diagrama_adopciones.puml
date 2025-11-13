@@ -2,7 +2,7 @@
 left to right direction
 
 entity Refugio {
-  Localizacion <<PK>>
+  Localizacion <<key>>
   Nombre
   Telefono
   Email
@@ -10,7 +10,7 @@ entity Refugio {
 }
 
 entity Persona {
-  DNI
+  DNI <<key>>
   Nombre_Completo
   Telefono
   Direccion
@@ -29,18 +29,18 @@ entity Empleado {
 }
 
 entity Animal {
-  Alias <<PK>>
+  Alias <<key>>
   Especie
   Nombre
   Sexo
 }
 
 entity Corral {
-  Id_Corral <<PK>>
+  Id_Corral <<key>>
 }
 
 entity Adopcion {
-  Num_Adopcion <<PK>>
+  Num_Adopcion <<key>>
   Estado
   Fecha
 }
