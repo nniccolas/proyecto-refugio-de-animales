@@ -1,0 +1,40 @@
+**Francisco Lencina, Alexis Gomez y Nicolas Bruno**
+
+**Diccionario de datos:**
+
+Corral = Animal + IDCorral
+
+Animal = Alias + Nombre_Animal + Especie [ gato | perro | ave | tortuga | cuis ] + Sexo [ Hembra | Macho ]
+
+Adoptante = Datos_Personales + Aptitud
+
+Datos_Personales = Nombre + Apellido + @Dni + Email + 1{Telefono}3 + 1{Direccion}3
+
+Aptitud = (Aprobado | Pendiente | Rechazado)
+
+Adopción: Adoptante + Animal + fecha_Adopcion + estado_Adopcion
+
+Devolución: periodo + fecha_Devolucion
+
+
+| Entidad               | Nombre (Atributo)| Descripción                                    | Longitud | Tipo      | Dominio  |
+| --------------------- | ---------------- | ---------------------------------------------- | -------- | --------- | -- ----- |
+| **Corral**            | IDCorral         | Número o código del corral                     | 3        | string    | Discreto |
+| **Animal**            | Alias            | Identificador único del animal                 | 10       | string    | Continuo |
+|                       | Nombre_Animal    | Nombre del animal                              | 10       | string    | Discreto |
+|                       | Especie          | Especie de animal adoptable                    | 10       | string    | Discreto |
+|                       | Sexo             | Sexo del animal adoptable                      | 6        | string    | Discreto |
+| **Adoptante**         | Datos_Personales | Datos personales del adoptante                 | -        | -         | -        |
+|                       | Aptitud          | Aptitud del potencial adoptante para adoptar   | 10       | bool      | -        |
+| **Datos_Personales**  | Nombre_Adoptante | Nombre del adoptante                           | 30       | string    | Discreto |
+|                       | Apellido         | Apellido del adoptante                         | 30       | string    | Discreto |
+|                       | DNI              | Documento Nacional de Identidad del adoptante  | 10       | int       | Continuo |
+|                       | Fecha_Nac        | Fecha de nacimiento del adoptante              | -        | date time | Continuo |
+|                       | Teléfono         | Teléfono del adoptante                         | 15       | string    | Discreto |
+|                       | Dirección        | Dirección del adoptante                        | 50       | string    | Discreto |
+| **Adopción**          | Fecha_Adopcion   | Fecha en que se realizó la adopción            | -        | date time | Continuo |
+|                       | Estado_Adopcion  | Estado de la adopción                          | -        | bool      | Discreto |
+| **Devolución**        | Periodo          | Tiempo transcurrido hasta la devolución (días) | 5        | int       | Continuo |
+|                       | Fecha_Devolucion | Fecha en que se realizó la devolución          | -        | date time | Continuo |
+
+

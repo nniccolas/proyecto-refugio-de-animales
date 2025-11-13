@@ -4,7 +4,7 @@
 
 **Actor: Refugio** 
 
-**Precondición:** El adoptante debe tener una adopcion realizada.
+**Precondición:** El adoptante debe tener una adopcion realizada y se debe haber iniciado sesión.
 
 **Camino básico:**
 

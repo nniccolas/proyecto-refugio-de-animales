@@ -4,7 +4,7 @@
 
 **Actor: Refugio** 
 
-**Precondición:** Debe haber un animal devuelto por arrepentimiento.
+**Precondición:** Debe haber un animal devuelto por arrepentimiento y haber iniciado sesión.
 
 **Camino básico:**
 
@@ -18,7 +18,7 @@
 
    2a. El sistema muestra mensaje de error y vuelve al paso 1.
 
-2. El numero de corral no existe o esta erroneo.
+1. El numero de corral no existe o esta erroneo.
 
    3a. El sistema muestra mensaje de error y vuelve al paso 3
 
@@ -26,7 +26,7 @@
 
    3a. El sistema muestra mensaje de error y vuelve al paso 3.
 
-4. El animal no esta en condiciones de ser adoptado.
+3. El animal no esta en condiciones de ser adoptado.
 
    3a. La condicion de adoptable va a estar pendiente. 
 

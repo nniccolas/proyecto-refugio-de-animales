@@ -61,8 +61,6 @@ class Adopcion {
 class Devolucion {
     Plazo: String
     Motivo : string
-  
-  + RegistrarDevolucion()
 }
 
 Persona <|-- Adoptante

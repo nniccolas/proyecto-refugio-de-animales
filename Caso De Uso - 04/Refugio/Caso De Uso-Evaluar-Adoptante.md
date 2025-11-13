@@ -4,7 +4,7 @@
 
 **Actor: Refugio** 
 
-**Precondición:** El adoptante debe haber enviado la solcitud de adopción.
+**Precondición:** El adoptante debe haber enviado la solcitud de adopción y se debe haber iniciado sesión.
 
 **Camino básico:**
 

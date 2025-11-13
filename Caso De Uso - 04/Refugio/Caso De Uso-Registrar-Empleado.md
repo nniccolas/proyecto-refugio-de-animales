@@ -4,12 +4,11 @@
 
 **Actor: Refugio** 
 
-**Precondición:** Debe haber un nuevo empleado contratado.
-El Responsable debe estar logeado en el sistema
+**Precondición:** Debe haber un nuevo empleado contratado y se debe iniciar sesion en el sistema.
 
 **Camino básico:**
 
-1. El responsable ingresa en la seccion de empleados.
+1. El refugio ingresa en la seccion de empleados.
 2. El refugio registra los datos personales y academicos del empleado, junto con su rol y puesto en la empresa.
 3. En caso de querer adoptar se adjunta la aptitud del adoptante.
 4. El sistema valida los datos del empleado.
@@ -17,11 +16,11 @@ El Responsable debe estar logeado en el sistema
 
 **Camino alternativo:** 
 
-1. El empleado no esta interesado o no es apto para adoptar hasta en un futuro cercano.
+3. El empleado no esta interesado o no es apto para adoptar hasta en un futuro cercano.
 
    3a. El sistema lo registra sin problema y continua con el paso 4.
 
-2. Los datos son erroneos o incorrectos o incompletos.
+4. Los datos son erroneos o incorrectos o incompletos.
 
    4a. El sistema muestra mensaje de error y vuelve al paso 2.
 
@@ -35,4 +34,4 @@ El sistema rechaza al empleado.
 
 **Post condiciones:**
 
-El empleado puede iniciar sesion y todos sus datos estan dentro del sistema.
+El empleado puede iniciar sesion y todos sus datos estan dentro del sistema (ya forma parte del refugio).
