@@ -1,0 +1,24 @@
+@startuml
+
+actor Cliente
+participant "Sistema Refugio" as Sistema
+participant "Módulo Evaluación" as Evaluacion
+participant "Registro Adoptantes" as RegistroA
+
+== Inicio del Proceso de Evaluación ==
+
+Cliente -> Sistema : Solicitar evaluación para adoptar
+Sistema -> Cliente : Solicitar datos personales
+Cliente -> Sistema : Enviar datos requeridos
+
+== Proceso de evaluación ==
+
+Sistema -> Evaluacion : Enviar datos para evaluar
+Evaluacion -> Evaluacion : Verificar requisitos
+Evaluacion -> RegistroA : Guardar información del adoptante
+RegistroA --> Evaluacion : Confirmación
+
+Evaluacion --> Sistema : Resultado de evaluación
+Sistema -> Cliente : Enviar resultado (Aprobado / Rechazado)
+
+@enduml
