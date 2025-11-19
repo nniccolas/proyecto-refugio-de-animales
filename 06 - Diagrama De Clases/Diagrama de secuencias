@@ -1,0 +1,33 @@
+@startuml
+
+actor Cliente
+participant "Sistema Refugio" as Sistema
+participant "Registro Animal" as Registro
+participant "Módulo Corrales" as Corrales
+participant "Módulo Adopciones" as Adopciones
+
+== Solicitud de adopción ==
+
+Cliente -> Sistema : Solicitar adopción
+Sistema -> Registro : Consultar animales disponibles
+Registro --> Sistema : Lista animales + corral
+Sistema -> Cliente : Mostrar animales disponibles
+Cliente -> Sistema : Seleccionar animal
+
+== Registro de la adopción ==
+
+Sistema -> Adopciones : Registrar adopción
+Adopciones -> Registro : Marcar como adoptado / eliminar registro
+Registro --> Sistema : Confirmación
+
+== Posible devolución ==
+
+Cliente -> Sistema : Solicitar devolución (arrepentimiento)
+Sistema -> Adopciones : Registrar devolución
+Adopciones -> Registro : Crear nuevo registro de animal
+Registro -> Corrales : Solicitar corral disponible
+Corrales --> Registro : Corral asignado
+Registro --> Sistema : Registro actualizado
+Sistema -> Cliente : Confirmación de devolución
+
+@enduml
