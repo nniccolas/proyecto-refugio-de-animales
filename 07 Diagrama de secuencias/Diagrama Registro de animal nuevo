@@ -1,0 +1,21 @@
+@startuml
+
+actor Empleado
+participant "Sistema Refugio" as Sistema
+participant "Registro Animal" as Registro
+participant "Módulo Corrales" as Corrales
+
+== Registro de animal nuevo ==
+
+Empleado -> Sistema : Registrar nuevo animal
+Sistema -> Empleado : Solicitar datos (nombre, tipo, etc.)
+Empleado -> Sistema : Enviar datos del animal
+
+Sistema -> Registro : Crear entrada del animal
+Registro -> Corrales : Solicitar corral disponible
+Corrales --> Registro : Corral asignado
+
+Registro --> Sistema : Animal registrado
+Sistema -> Empleado : Confirmación de Registro
+
+@enduml
