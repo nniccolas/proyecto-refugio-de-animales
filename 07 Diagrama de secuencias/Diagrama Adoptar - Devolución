@@ -18,16 +18,31 @@ Cliente -> Sistema : Seleccionar animal
 
 Sistema -> Adopciones : Registrar adopción
 Adopciones -> Registro : Marcar como adoptado / eliminar registro
-Registro --> Sistema : Confirmación
+
+alt Adopción exitosa
+    Registro --> Sistema : Confirmación
+    Sistema -> Cliente : Confirmación de adopción
+else Error en adopción
+    Registro --> Sistema : Falla
+    Sistema -> Cliente : Mostrar error (no se pudo adoptar)
+end
 
 == Posible devolución ==
 
-Cliente -> Sistema : Solicitar devolución (arrepentimiento)
+Cliente -> Sistema : Solicitar devolución
+
 Sistema -> Adopciones : Registrar devolución
-Adopciones -> Registro : Crear nuevo registro de animal
+Adopciones -> Registro : Crear nuevo registro del animal
 Registro -> Corrales : Solicitar corral disponible
-Corrales --> Registro : Corral asignado
-Registro --> Sistema : Registro actualizado
-Sistema -> Cliente : Confirmación de devolución
+
+alt Corral disponible
+    Corrales --> Registro : Corral asignado
+    Registro --> Sistema : Registro actualizado
+    Sistema -> Cliente : Confirmación de devolución
+else Corral no disponible
+    Corrales --> Registro : Falla
+    Registro --> Sistema : Error
+    Sistema -> Cliente : No se pudo completar devolución
+end
 
 @enduml
