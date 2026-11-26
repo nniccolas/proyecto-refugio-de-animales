@@ -1,0 +1,70 @@
+@startuml
+skinparam style strictuml
+skinparam monochrome true
+skinparam sequenceMessageAlign center
+hide footbox
+
+title Francisco Lencina, Nicolas Bruno y Alexis Gomez\nDiagrama de Secuencia de Sistema - Caso de uso: Adopción
+
+actor ":Refugio" as R
+participant ":Sistema" as S
+actor ":Adoptante" as A
+
+R -> S : evaluarAdoptante(datosPersonales)
+activate S
+alt datos incorrectos o incompletos
+    S --> R : «advertencia de datos erróneos»
+else adoptó recientemente
+    S --> R : «proceso de adopción bloqueado»
+else else
+    S --> R : «datos válidos y sin adopción reciente»
+    deactivate S
+
+    R -> S : verificarAntecedentes(dni)
+    activate S
+    alt tiene antecedentes penales o causas
+        S --> R : «proceso de adopción bloqueado»
+    else else
+        S --> R : «sin antecedentes ni causas»
+        deactivate S
+
+        R -> S : iniciarCuestionario(dni)
+        activate S
+        S --> A : «cuestionario»
+        S --> R : «cuestionario enviado»
+        deactivate S
+
+        A -> S : responderCuestionario(respuestas)
+        activate S
+        S --> R : «respuestas del adoptante»
+        S --> A : «respuestas registradas»
+        deactivate S
+
+        alt cumple las condiciones
+            R -> S : aprobarAdoptante(dni)
+            activate S
+            S --> R : «adoptante apto»
+            S --> A : «animales disponibles\n(alias, nombre, especie, sexo)»
+            deactivate S
+
+            opt encuentra un animal que le gusta
+                A -> S : seleccionarAnimal(alias)
+                activate S
+                S --> R : «aviso de adopción»
+                S --> A : «adopción registrada + período de arrepentimiento»
+                deactivate S
+
+                A -> S : confirmarRecepcionAnimal(alias)
+                activate S
+                S --> A : «adopción finalizada»
+                deactivate S
+            end
+        else else
+            R -> S : rechazarAdoptante(dni)
+            activate S
+            S --> R : «proceso bloqueado y rechazo registrado»
+            deactivate S
+        end
+    end
+end
+@enduml

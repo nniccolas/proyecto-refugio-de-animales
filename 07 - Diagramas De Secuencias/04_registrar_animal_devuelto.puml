@@ -1,0 +1,48 @@
+@startuml
+skinparam style strictuml
+skinparam monochrome true
+skinparam sequenceMessageAlign center
+hide footbox
+
+title Francisco Lencina, Nicolas Bruno y Alexis Gomez\nDiagrama de Secuencia de Sistema - Caso de uso: Registrar Animal Devuelto
+
+actor ":Refugio" as R
+participant ":Sistema" as S
+
+R -> S : ingresarSeccionAnimales()
+activate S
+S --> R : «registro de animales al día»
+deactivate S
+
+loop hasta asignar un corral con espacio
+    R -> S : marcarDevuelto(alias)
+    activate S
+    S --> R : «adopción y plazo eliminados\n+ solicitud de nuevo corral»
+    deactivate S
+
+    loop hasta ingresar un número de corral correcto
+        R -> S : asignarCorral(alias, numeroCorral)
+        activate S
+        alt número inexistente o erróneo
+            S --> R : «mensaje de error: corral incorrecto»
+        else corral lleno
+            S --> R : «mensaje de error: corral lleno»
+        else else
+            S --> R : «opción de marcar como adoptable»
+        end
+        deactivate S
+    end
+end
+
+alt animal en condiciones de ser adoptado
+    R -> S : marcarAdoptable(alias)
+    activate S
+    S --> R : «añadido a adoptables, registro finalizado»
+    deactivate S
+else else
+    R -> S : marcarCondicionPendiente(alias)
+    activate S
+    S --> R : «condición de adoptable pendiente»
+    deactivate S
+end
+@enduml

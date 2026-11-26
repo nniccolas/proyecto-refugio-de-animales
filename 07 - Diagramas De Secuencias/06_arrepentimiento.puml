@@ -1,0 +1,51 @@
+@startuml
+skinparam style strictuml
+skinparam monochrome true
+skinparam sequenceMessageAlign center
+hide footbox
+
+title Francisco Lencina, Nicolas Bruno y Alexis Gomez\nDiagrama de Secuencia de Sistema - Caso de uso: Arrepentimiento
+
+actor ":Adoptante" as A
+participant ":Sistema" as S
+actor ":Refugio" as R
+
+A -> S : comunicarArrepentimiento(idAdopcion)
+activate S
+S --> R : «aviso de arrepentimiento»
+S --> A : «solicitud recibida»
+deactivate S
+
+R -> S : validarArrepentimiento(idAdopcion)
+activate S
+alt plazo de arrepentimiento vencido
+    S --> R : «no se puede ejecutar: plazo vencido»
+    S --> A : «no se puede ejecutar: plazo vencido»
+else no se logra validar
+    S --> R : «mensaje de error»
+else else
+    S --> R : «arrepentimiento validado y registrado»
+    S --> A : «arrepentimiento registrado»
+    deactivate S
+
+    alt el animal es devuelto
+        note over A, R : El Adoptante entrega el animal al Refugio
+
+        R -> S : marcarDevuelto(alias)
+        activate S
+        S --> R : «adopción y plazo de devolución eliminados»
+        deactivate S
+
+        R -> S : registrarAnimalAdoptable(alias)
+        activate S
+        S --> R : «animal registrado como adoptable»
+        deactivate S
+    else else
+        R -> S : informarNoDevolucion(idAdopcion)
+        activate S
+        S --> R : «arrepentimiento bloqueado»
+        S --> A : «arrepentimiento bloqueado»
+        deactivate S
+    end
+end
+@enduml

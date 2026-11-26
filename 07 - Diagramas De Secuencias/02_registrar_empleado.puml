@@ -1,0 +1,35 @@
+@startuml
+skinparam style strictuml
+skinparam monochrome true
+skinparam sequenceMessageAlign center
+hide footbox
+
+title Francisco Lencina, Nicolas Bruno y Alexis Gomez\nDiagrama de Secuencia de Sistema - Caso de uso: Registrar Empleado Entrante
+
+actor ":Refugio" as R
+participant ":Sistema" as S
+
+R -> S : ingresarSeccionEmpleados()
+activate S
+S --> R : «lista de empleados actuales»
+deactivate S
+
+R -> S : registrarNuevoEmpleado()
+activate S
+S --> R : «formulario de datos del empleado»
+deactivate S
+
+loop hasta que los datos sean válidos
+    R -> S : ingresarDatosEmpleado(datosPersonales, datosAcademicos,\nrol, puesto, contraseña)
+    activate S
+    alt datos válidos
+        opt interesado y apto para adoptar
+            S --> R : «aptitud para adoptar registrada»
+        end
+        S --> R : «empleado registrado y habilitado»
+    else else
+        S --> R : «mensaje de error»
+    end
+    deactivate S
+end
+@enduml
